@@ -6,14 +6,21 @@ import CartContainer from "./components/CartContainer";
 // components
 import Navbar from "./components/Navbar";
 // redux stuff
-const initialState = { count: 0 };
+const initialState = { count: 14 };
 function reducer(state, action) {
-  console.log("reducer");
+  if (action.type === "DECREASE") {
+    return {
+      count: state.count - 1,
+    };
+  }
   return state;
 }
 
 const store = createStore(reducer, initialState);
 
+// store.getState() returns the current state of the store
+store.dispatch({ type: "DECREASE" });
+store.dispatch({ type: "DECREASE" });
 
 function App() {
   // cart setup
