@@ -14,7 +14,7 @@ function reducer(state, action) {
  
   }
   if (action.type === "INCREASE") {
-return{...state, count: state.count + 1};
+return{...state, count: state.count + 1,name:'sOhan chaudhuree'};
   }
   if(action.type === "RESET"){
     return {...state, count: 0};
