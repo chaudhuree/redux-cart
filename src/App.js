@@ -9,16 +9,18 @@ import Navbar from "./components/Navbar";
 const initialState = { count: 0 };
 function reducer(state, action) {
   console.log("reducer");
+  return state;
 }
 
 const store = createStore(reducer, initialState);
+
 
 function App() {
   // cart setup
 
   return (
     <main>
-      <Navbar />
+      <Navbar cart={store.getState()} />
       <CartContainer cart={cartItems} />
     </main>
   );
