@@ -6,21 +6,23 @@ import CartContainer from "./components/CartContainer";
 // components
 import Navbar from "./components/Navbar";
 // redux stuff
-const initialState = { count: 14 };
+const initialState = { count: 14 ,name:'chaudhuree'};
+
 function reducer(state, action) {
   if (action.type === "DECREASE") {
-    return {
-      count: state.count - 1,
-    };
+    return {...state, count: state.count - 1};
+ 
   }
   if (action.type === "INCREASE") {
-    return {
-      count: state.count + 1,
-    };
+return{...state, count: state.count + 1};
   }
   if(action.type === "RESET"){
-    return {  count: 0 };
+    return {...state, count: 0};
   }
+  if(action.type === "CHANGE_NAME"){
+    return {...state, name: action.payload};
+  }
+  
   return state;
 }
 
@@ -28,8 +30,10 @@ const store = createStore(reducer, initialState);
 
 // store.getState() returns the current state of the store
 store.dispatch({ type: "DECREASE" });
-store.dispatch({ type: "INCREASE" });
 store.dispatch({ type: "RESET" });
+store.dispatch({ type: "INCREASE" });
+store.dispatch({ type: "CHANGE_NAME", payload: "sOhan" });
+console.log(store.getState().name);
 
 function App() {
   // cart setup
