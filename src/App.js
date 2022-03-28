@@ -7,21 +7,10 @@ import { DECREASE, INCREASE } from "./components/action";
 import CartContainer from "./components/CartContainer";
 // components
 import Navbar from "./components/Navbar";
-
+import reducer from "./reducer";
 // redux stuff
 const initialState = { count: 14, name: "chaudhuree" };
 
-function reducer(state, action) {
-  if (action.type === DECREASE) {
-    return { ...state, count: state.count - 1 };
-  }
-  if (action.type === INCREASE) {
-    return { ...state, count: state.count + 1, name: "sOhan chaudhuree" };
-  }
-
-
-  return state;
-}
 
 const store = createStore(reducer, initialState);
 
