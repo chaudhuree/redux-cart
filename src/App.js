@@ -13,6 +13,14 @@ function reducer(state, action) {
       count: state.count - 1,
     };
   }
+  if (action.type === "INCREASE") {
+    return {
+      count: state.count + 1,
+    };
+  }
+  if(action.type === "RESET"){
+    return {  count: 0 };
+  }
   return state;
 }
 
@@ -20,7 +28,8 @@ const store = createStore(reducer, initialState);
 
 // store.getState() returns the current state of the store
 store.dispatch({ type: "DECREASE" });
-store.dispatch({ type: "DECREASE" });
+store.dispatch({ type: "INCREASE" });
+store.dispatch({ type: "RESET" });
 
 function App() {
   // cart setup
