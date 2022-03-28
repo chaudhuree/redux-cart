@@ -1,9 +1,9 @@
 import React from "react";
 import { createStore } from "redux";
-// import actions
-import { DECREASE, INCREASE } from "./actions";
 // items
 import cartItems from "./cart-items";
+// import actions
+import { DECREASE, INCREASE } from "./components/action";
 import CartContainer from "./components/CartContainer";
 // components
 import Navbar from "./components/Navbar";
