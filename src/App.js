@@ -9,7 +9,7 @@ import CartContainer from "./components/CartContainer";
 import Navbar from "./components/Navbar";
 import reducer from "./reducer";
 // redux stuff
-const initialState = { cart: cartItems,total:0,amount:0 };
+const initialState = { cart: cartItems,total:0,amount:4 };
 
 
 const store = createStore(reducer, initialState);
