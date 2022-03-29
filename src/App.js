@@ -9,7 +9,7 @@ import CartContainer from "./components/CartContainer";
 import Navbar from "./components/Navbar";
 import reducer from "./reducer";
 // redux stuff
-const initialState = { cart: cartItems,total:0,amount:4 };
+const initialState = { cart: cartItems,total:103,amount:4 };
 
 
 const store = createStore(reducer, initialState);
@@ -24,7 +24,7 @@ function App() {
   return (
     <Provider store={store}>
       <Navbar />
-      <CartContainer cart={cartItems} />
+      <CartContainer />
     </Provider>
   );
 }

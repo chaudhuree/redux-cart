@@ -18,7 +18,7 @@ const Navbar = ({amount}) => {
   );
 };
 // redux code
-function mapStateToProps(state) {
+const mapStateToProps=(state) =>{
   return {
     amount: state.amount,
   };
