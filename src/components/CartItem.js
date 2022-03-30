@@ -32,25 +32,18 @@ const CartItem = ({ img, title, price, amount,remove }) => {
   );
 };
 
-const mapDispatchToPropss = (dispatch) => { 
+const mapDispatchToPropss = (dispatch,ownProps) => { 
+  // ownProps is the props of CartItem
+  const { id } = ownProps;
   return {
     remove: () => {
       dispatch({
-        type: REMOVE
+        type: REMOVE,
+        payload:{
+          id
+        }
       })
-    },
-  //   increase: (id) => {
-  //     dispatch({
-  //       type: 'INCREASE',
-  //       id: id
-  //     })
-  //   },
-  //   decrease: (id) => {
-  //     dispatch({
-  //       type: 'DECREASE',
-  //       id: id
-  //     })
-  //   }
+    }
   }
 }
 
