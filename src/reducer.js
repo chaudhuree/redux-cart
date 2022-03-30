@@ -7,7 +7,10 @@ export default function reducer(state, action) {
     }
   }
   if(action.type === REMOVE){
-    console.log('remove');
+    return {
+      ...state,
+      cart: state.cart.filter(item => item.id !== action.payload.id)
+    }
   }
   if(action.type === INCREASE){
     console.log('increase');
